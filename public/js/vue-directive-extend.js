@@ -1,5 +1,5 @@
-import vueDirectiveResize from 'public/js/vue-directive-resize'
-import vueDirectiveMousewheel from 'public/js/vue-directive-mousewheel'
+import vueDirectiveResize from './vue-directive-resize'
+import vueDirectiveMousewheel from './vue-directive-mousewheel'
 
 function vueDirectiveExtend (vm) {
   vm.use(vueDirectiveResize)

@@ -1,6 +1,6 @@
 {
   "name": "vue-directive-extend",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "This project is used to extend more event listener for Vue.",
   "main": "./public/js/vue-directive-extend.js",
   "keywords": [
@@ -20,7 +20,7 @@
   },
   "files": [
     "LICENSE",
-    "vue-directive-extend.js"
+    "public"
   ],
   "author": "kiccer",
   "license": "MIT",
