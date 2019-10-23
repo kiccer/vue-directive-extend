@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello" v-resize="onResize" v-mousewheel="onMousewheel">
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -31,10 +31,19 @@
 </template>
 
 <script>
+/* eslint-disable no-console */
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    onResize () {
+      console.log(1111)
+    },
+    onMousewheel (e) {
+      console.log(e)
+    }
   }
 }
 </script>

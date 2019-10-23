@@ -1,29 +1,52 @@
-# vue-directive-extend
+<div align="center">
+  <h1>vue-directive-extend</h1>
+  This project is used to extend more event listener for Vue.
+</div>
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+### NPM
+```NPM
+npm install --save vue-directive-extend
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+### Using
+```javascript
+// main.js
+import Vue from 'vue'
+import App from './App.vue'
+import vueDirectiveExtend from 'vue-directive-extend'
+
+Vue.use(vueDirectiveExtend)
+
+Vue.config.productionTip = false
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
 ```
 
-### Run your tests
-```
-npm run test
-```
+In `.vue` files.
+```vue
+<template lang="html">
+  <div class="demoVue">
+    <div class="test" v-resize="onResize" v-mousewheel="onMousewheel"></div>
+  </div>
+</template>
 
-### Lints and fixes files
-```
-npm run lint
-```
+<script>
+export default {
+  name: 'demo',
+  methods: {
+    onResize () {
+      console.log('onResize')
+    },
+    onMousewheel (e) {
+      console.log(e)
+    }
+  }
+}
+</script>
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<style lang="scss" scoped>
+</style>
+
+```

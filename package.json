@@ -1,15 +1,38 @@
 {
   "name": "vue-directive-extend",
   "version": "0.1.0",
-  "private": true,
+  "description": "This project is used to extend more event listener for Vue.",
+  "main": "./public/js/vue-directive-extend.js",
+  "keywords": [
+    "vue",
+    "directive",
+    "mousewheel",
+    "resize",
+    "eventlistener"
+  ],
+  "homepage": "https://github.com/kiccer/vue-directive-extend",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiccer/vue-directive-extend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kiccer/vue-directive-extend/issues"
+  },
+  "files": [
+    "LICENSE",
+    "vue-directive-extend.js"
+  ],
+  "author": "kiccer",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.3.2",
-    "vue": "^2.6.10"
+    "element-resize-detector": "^1.1.15",
+    "jquery": "^3.4.1",
+    "jquery-mousewheel": "^3.1.13"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",
@@ -18,7 +41,9 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "core-js": "^3.3.2",
+    "vue": "^2.6.10"
   },
   "eslintConfig": {
     "root": true,
