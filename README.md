@@ -8,9 +8,10 @@
 npm install --save vue-directive-extend
 ```
 
-### Using
+### Usage
+> In `main.js` files.
+
 ```javascript
-// main.js
 import Vue from 'vue'
 import App from './App.vue'
 import vueDirectiveExtend from 'vue-directive-extend'
@@ -24,7 +25,8 @@ new Vue({
 }).$mount('#app')
 ```
 
-In `.vue` files.
+> In `.vue` files.
+
 ```vue
 <template lang="html">
   <div class="demoVue">
@@ -50,3 +52,48 @@ export default {
 </style>
 
 ```
+
+### Event listener list
+
+<escape>
+  <table>
+    <tr>
+      <th>Listener</th>
+      <th>description</th>
+      <th>Modifiers</th>
+      <th>Modifiers description</th>
+    </tr>
+    <tr>
+      <td rowspan="2"><code>v-resize</code></td>
+      <td rowspan="2">Use the element-resize-detector plug-in to listener element resize events.</td>
+      <td><code>.lazy</code></td>
+      <td>Lazy mode. Triggering resize too often will only work for the last time.</td>
+    </tr>
+    <tr>
+      <td><code>.100</code></td>
+      <td>After <code>.lazy</code>, set maximum time difference. If not set, then default is 100.</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><code>v-mousewheel</code></td>
+      <td rowspan="2">Use the jquery-mousewheel plug-in to listener mouse wheel events.</td>
+      <td><code>.stop</code></td>
+      <td>Same as <code>e.stopPropagation()</code></td>
+    </tr>
+    <tr>
+      <td><code>.prevent</code></td>
+      <td>Same as <code>e.preventDefault()</code></td>
+    </tr>
+    <tr>
+      <td><code>v-load</code></td>
+      <td>Triggered when the element is inserted into the DOM.</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code>v-unload</code></td>
+      <td>Triggered when the element is removed from the DOM.</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </table>
+</escape>

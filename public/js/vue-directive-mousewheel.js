@@ -5,14 +5,19 @@ function vueDirectiveMousewheel (vm) {
   vm.directive('mousewheel', {
     // bind (el, binding) {},
     inserted (el, binding) {
-      // el.addEventListener('mousewheel', binding.value)
-      $(el).on('mousewheel', binding.value)
+      $(el).off('mousewheel')
+      $(el).on('mousewheel', e => {
+        let { modifiers, value } = binding
+        value && value(e)
+        modifiers.stop && e.stopPropagation()
+        modifiers.prevent && e.preventDefault()
+        if (modifiers.stop && modifiers.prevent) return false
+      })
     },
-    // componentUpdated (el) {},
-    // update (el) {},
-    unbind (el, binding) {
-      // el.removeEventListener('mousewheel', binding.value)
-      $(el).off('mousewheel', binding.value)
+    // componentUpdated (el, binding) {},
+    // update (el, binding) {},
+    unbind (el) {
+      $(el).off('mousewheel')
     }
   })
 }

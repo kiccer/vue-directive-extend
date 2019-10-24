@@ -1,6 +1,6 @@
 <template>
-  <div class="hello" v-resize="onResize" v-mousewheel="onMousewheel">
-    <h1>{{ msg }}</h1>
+  <div class="hello" v-resize.lazy="onResize" v-mousewheel.prevent="onMousewheel" v-load="onLoad" v-unload="onUnload">
+    <h1 v-mousewheel.stop="onMousewheel">{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -38,8 +38,14 @@ export default {
     msg: String
   },
   methods: {
+    onLoad () {
+      console.log('onLoad')
+    },
+    onUnload () {
+      console.log('onUnload')
+    },
     onResize () {
-      console.log(1111)
+      console.log('onResize')
     },
     onMousewheel (e) {
       console.log(e)
@@ -50,6 +56,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+  height: 200px;
+  overflow: auto;
+}
 h3 {
   margin: 40px 0 0;
 }
